@@ -522,7 +522,7 @@ var Creatable = _react2['default'].createClass({
 		var onInputChange = this.props.onInputChange;
 
 		if (onInputChange) {
-			onInputChange(input);
+			input = onInputChange(input);
 		}
 
 		// This value may be needed in between Select mounts (when this.select is null)
@@ -1173,7 +1173,7 @@ var Select = _react2['default'].createClass({
 			});
 		} else {
 			// otherwise, focus the input and open the menu
-			this._openAfterFocus = true;
+			this._openAfterFocus = this.props.openOnFocus;
 			this.focus();
 		}
 	},
